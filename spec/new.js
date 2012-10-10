@@ -1,5 +1,6 @@
 function act(c) {
-	c.sut = require('../counter')();
+	var createCounter = require('../counter');
+	c.sut = createCounter();
 }
 act._name = module.filename;
 module.exports = act;
