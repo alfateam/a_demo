@@ -1,10 +1,10 @@
-function newCounter() {
-	var c = {};
-	c.value = 0;
-	c.increment = function() {
-		c.value++;
+function createCounter() {
+	var counter = {};
+	counter.value = 0;
+	counter.increment = function() {
+		counter.value++;
 	};
-	return c;
+	return counter;
 }
 
-module.exports = newCounter;
+module.exports = createCounter;
