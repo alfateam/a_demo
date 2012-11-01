@@ -1,10 +1,8 @@
-function createCounter() {
-	var counter = {};
-	counter.value = 0;
-	counter.increment = function() {
-		counter.value++;
+module.exports = function () {
+	var counter = {
+		value: 0,
+		increment: function() { this.value++; }
 	};
+	
 	return counter;
 }
-
-module.exports = createCounter;
