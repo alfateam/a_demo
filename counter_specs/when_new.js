@@ -4,7 +4,7 @@ var when = require('a').when;
 
 when(act, c).
 	it('should be an object').
-		assertTrue(typeof c.sut == 'object').
+		assertEqual('object', typeof c.sut).
 	it('should have value equal to zero').
 		assertEqual(0, c.sut.value).
 	it('should fail just for fun').
