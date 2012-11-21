@@ -1,8 +1,7 @@
-var act = require('./new');
 var c = {};
 var when = require('a').when;
 
-when(act, c).
+when('./new', c).
 	it('should be an object').
 		assertEqual('object', typeof c.sut).
 	it('should have value equal to zero').

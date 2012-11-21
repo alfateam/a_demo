@@ -1,8 +1,8 @@
 module.exports = function () {
 	var counter = {
 		value: 0,
-		increment: function() { value++; }
+		increment: function() { this.value++; }
 	};
-	
+
 	return counter;
-}
+};
