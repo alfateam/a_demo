@@ -1,5 +1,5 @@
 function act(c) {
 	c.sut.increment();
 }
-act.base = '../new';
+act.base = '../increment';
 module.exports = act;
