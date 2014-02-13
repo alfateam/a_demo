@@ -19,8 +19,15 @@ when('./act', c)
 	.it('can display assertStrictEqual failure').assertStrictEqual({},{})
 	.it('can display assertNotStrictEqual success').assertNotStrictEqual({},{})
 	.it('can display assertNotStrictEqual failure').assertNotStrictEqual('foo','foo')
-	.it('can display assertThrows success').assertThrows(function(){ throw 'error'})
-	.it('can display assertThrows failure due to wrong exception').assertThrows(function(){ throw 'error'}, /foo/)
+	.it('can display assertThrows success').assertThrows(function(){ throw 'error';})
+	.it('can display assertThrows failure with plain error due to wrong exception').assertThrows(function () {throw 'error';}, /foo/)	
+	.it('can display assertThrows failure due to wrong exception').assertThrows(throwError, /foo/)
+	.it('can display assertThrows failure with inline block due to wrong exception').assertThrows(function() {throw new Error('error');}, /foo/)
 	.it('can display assertThrows failure').assertThrows(function() {},Error)
+	.it('can display assertDoesNotThrow success').assertDoesNotThrow(function () {})
+	.it('can display assertDoesNotThrow failure').assertDoesNotThrow(function () {throw 'error';})
+	.it('can display assertDoesNotThrow failure with stackTrace').assertDoesNotThrow(function () {throw new Error('foo');})
 
-
+function throwError(){
+	throw new Error('error');
+}
