@@ -1,7 +1,9 @@
 var c = {};
 var when = require('a').when;
 
-when('./act', c)
+function emptyAct(c) {}
+
+when(emptyAct, c)
 	.it('can display assert fail').assertFail()
 	.it('can display assert success').assert(true)
 	.it('can display assert failure').assert(false)
